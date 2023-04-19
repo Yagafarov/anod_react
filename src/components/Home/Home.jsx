@@ -1,27 +1,40 @@
 import React from 'react';
-import { Carousel } from 'antd';
+import {Carousel, Row, Col, Button} from 'antd';
 import './Home.css'
-const contentStyle = {
-  height: '160px',
-  color: '#fff',
-  lineHeight: '160px',
-  textAlign: 'center',
-  background: '#364d79',
-};
 
 const Home = () => (
   <Carousel autoplay className='home'>
-    <div>
-      <h3 style={contentStyle}>1</h3>
+    <div className={'navbarItem'}>
+      <Row className="corItem">
+          <Col span={12}>
+              <h1>
+                  Lorem ipsum dolor sit amet.
+              </h1>
+              <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam asperiores blanditiis commodi corporis culpa doloremque, doloribus iusto pariatur quae, quis similique suscipit.
+              </p>
+              <Button type={'default'}>Salom</Button>
+          </Col>
+          <Col span={12}>22</Col>
+      </Row>
     </div>
-    <div>
-      <h3 style={contentStyle}>2</h3>
+    <div className={'navbarItem'}>
+      <Row className="corItem">
+          <Col span={12}>11</Col>
+          <Col span={12}>22</Col>
+      </Row>
     </div>
-    <div>
-      <h3 style={contentStyle}>3</h3>
+    <div className={'navbarItem'}>
+      <Row className="corItem">
+          <Col span={12}>11</Col>
+          <Col span={12}>22</Col>
+      </Row>
     </div>
-    <div>
-      <h3 style={contentStyle}>4</h3>
+    <div className={'navbarItem'}>
+      <Row className="corItem">
+          <Col span={12}>11</Col>
+          <Col span={12}>22</Col>
+      </Row>
     </div>
   </Carousel>
 );

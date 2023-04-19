@@ -1,10 +1,10 @@
 import React from 'react';
 import { Menu } from 'antd';
 import { HomeOutlined, UserOutlined, SettingOutlined, ShoppingOutlined, MailOutlined } from '@ant-design/icons';
-
+import './Navbar.css'
 const Navbar = () => {
     return (
-        <Menu mode="horizontal" style={{display:'flex',justifyContent:'center'}} >
+        <Menu mode="horizontal" style={{display:'flex',justifyContent:'center'}} className={"navbar"}>
             <Menu.Item key="home" icon={<HomeOutlined />}>
                 Home
             </Menu.Item>
