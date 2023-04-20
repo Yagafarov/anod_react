@@ -1,27 +1,45 @@
 import React from 'react';
 import { Menu } from 'antd';
-import { HomeOutlined, UserOutlined, SettingOutlined, ShoppingOutlined, MailOutlined } from '@ant-design/icons';
+import { HomeOutlined, InfoCircleOutlined,MailOutlined,ShoppingOutlined } from '@ant-design/icons';
 import './Navbar.css'
 const Navbar = () => {
+    const menuItems = [
+        {
+            title:'Home',
+            key:'home',
+            icon:  <HomeOutlined />
+        },
+        {
+            title: 'About',
+            key: 'about',
+            icon: <InfoCircleOutlined />
+        },
+        {
+            title: 'Card',
+            key: 'card',
+            icon: <ShoppingOutlined />
+        },
+        {
+            title:'Contact',
+            key: 'contact',
+            icon: <MailOutlined />
+        }
+    ];
+
+    const handleMenuClick = (e) => {
+        const sectionId = menuItems.find((item) => item.key === e.key).key;
+        const section = document.getElementById(sectionId);
+        section.scrollIntoView({ behavior: 'smooth' });
+    };
+
     return (
-        <Menu mode="horizontal" style={{display:'flex',justifyContent:'center'}} className={"navbar"}>
-            <Menu.Item key="home" icon={<HomeOutlined />}>
-                Home
-            </Menu.Item>
-            <Menu.Item key="profile" icon={<UserOutlined />}>
-                Profile
-            </Menu.Item>
-            <Menu.Item key="settings" icon={<SettingOutlined />}>
-                Settings
-            </Menu.Item>
-            <Menu.Item key="cart" icon={<ShoppingOutlined />}>
-                Cart
-            </Menu.Item>
-            <Menu.Item key="contact" icon={<MailOutlined />}>
-                Contact Us
-            </Menu.Item>
+        <Menu  onClick={(e) => handleMenuClick(e)}  mode="horizontal" style={{display:'flex',justifyContent:'center'}} className={"navbar"}>
+            {
+                menuItems.map((item)=>(
+                    <Menu.Item key={item.key} icon={item.icon}>{item.title}</Menu.Item>
+                ))
+            }
         </Menu>
     );
 };
-
 export default Navbar;
